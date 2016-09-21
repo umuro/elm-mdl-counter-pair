@@ -1,4 +1,4 @@
-module CounterPair where
+module CounterPair exposing(..)
 
 import Counter
 import Html exposing (..)
