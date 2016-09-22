@@ -1,11 +1,17 @@
+import Html.App as App
+import Material.Scheme
 
-import CounterPair exposing (init, update, view)
-import StartApp.Simple exposing (start)
+import CounterPair exposing(Model, initialModel, Msg, update, view)
 
-
+main: Program Never
 main =
-  start
-    { model = init 0 0
+  App.program
+    { init = ( initialModel 0 0, Cmd.none )
+    , view = mainView
+    , subscriptions = always Sub.none
     , update = update
-    , view = view
     }
+
+mainView model =
+  view model
+  |> Material.Scheme.top
